@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "eu-west-1"
+  region = "us-east-1"
 }
 
 data "aws_vpc" "default" {
@@ -44,12 +44,11 @@ module "security_group" {
 
 resource "aws_eip" "this" {
   vpc      = true
-  instance = "${module.ec2.id[0]}"
+  instance = "${module.ec2_cluster.id[0]}"
 }
 
-module "ec2" {
-  source = "../../"
-
+module "ec2_cluster" {
+  source = "terraform-aws-modules/ec2-instance/aws"
   instance_count = 1
 
   name                        = "CloudEraMaster"
