@@ -20,3 +20,13 @@ variable "default_tags" { type = "map" }
 variable "termination_protection" {
   default = "false"
 }
+
+variable "acm_cert_arn" {type="string"}
+
+variable "vpc_id" {}
+
+variable "vm_app_port" {}
+
+variable "vm_instance_id" {}
+
+variable "alb_ssl_policy" {}
