@@ -25,3 +25,33 @@ module "aws_ec2" {
     "env", "dev"
   )}"
 }
+
+module "acm_certificate" {
+  source = "../../modules/acm"
+  
+  domain_name = "*.hatluri.com"
+  
+  //tags
+  default_tags = "${map(
+    "Name", "terri-project",
+    "app", "terri-project-web-service",
+    "env", "dev"
+  )}"
+}
+
+module "application_lb" {
+  source = "../../modules/alb"
+  
+  alb_name = "terriweb-service-alb"
+  alb_type = "application"
+  subnet_ids = ["subnet-09abb443","subnet-25b5fa42"]
+  security_group_id = "sg-f10d29a9"
+  termination_protection = "false"
+
+  //tags
+  default_tags = "${map(
+    "Name", "terri-project",
+    "app", "terri-project-web-service",
+    "env", "dev"
+  )}"
+}
