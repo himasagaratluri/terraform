@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  # install tf version $TF_VERSION = 0.12.23
+  install:
+    commands:
+      - "apt install unzip -y"
+      - "wget https://releases.hashicorp.com/terraform/$TF_VERSION/terraform_$TF_VERSION_linux_amd64.zip"
+      - "unzip terraform_0.11.14_linux_amd64.zip"
+      - "mv terraform /usr/local/bin/"
+  pre_build:
+    commands:
+      - terraform init
+
+  build:
+    commands:
+      - terraform $TF_COMMAND
+      # - terraform $TF_COMMAND -auto-approve
+
+  post_build:
+    commands:
+      - echo terraform $TF_COMMAND completed on `date`

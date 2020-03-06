@@ -1,0 +1,5 @@
+![Build Status](https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoicDJSdFRFWVcyRHNKYjZ2MDNncmI2U3BzRThlems3bjVHZHUwcThhUnpIeHMwdXAvNzc1RzFDY0FHeHZJNTdocmlJTW1vREYvaTI0bGdHd1hQcS80UW80PSIsIml2UGFyYW1ldGVyU3BlYyI6ImwwaGdzWU1KRnRxTnBYa0wiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
+
+# Terraform Project
+
+Project to build and deploy a small web-app serving infra
