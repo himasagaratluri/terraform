@@ -11,3 +11,5 @@ vars.tf
 .venv
 venv
 .terraform
+
+.DS_Store
